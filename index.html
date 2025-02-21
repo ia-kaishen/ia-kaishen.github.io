@@ -3,25 +3,15 @@
         <title>Hello World from title</title>
         <script>
             console.log("Hello World from script");
-            // existing js tag
-            (function() {
-                var script = document.createElement('script');
-                script.async = true;
-                script.src = 'https://invol.co/icmt.js?id=ICM-670-4650';
-                document.head.appendChild(script);
-                var script2 = document.createElement('script');
-                script2.type = "text/javascript";
-                script2.textContent = `
-                    window.iaCallback = window.iaCallback || [];
-                    console.log("in second script");
-                    function iaq() {
-                        console.log("iaq running");
-                        iaCallback.push(arguments);
-                    }
-                `;
-                document.head.appendChild(script2);
-            })();
-            
+        </script>
+        <script async src="https://invol.co/icmt.js?id=ICM-670-4650"></script>
+        <script type="text/javascript">
+            window.iaCallback = window.iaCallback || [];
+            console.log("in second script tag");
+            function iaq() {
+                console.log("in iaq running");
+                iaCallback.push(arguments);
+            }
         </script>
 
     </head>
