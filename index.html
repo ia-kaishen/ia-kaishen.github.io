@@ -13,6 +13,7 @@
                 script2.type = "text/javascript";
                 script2.textContent = `
                     window.iaCallback = window.iaCallback || [];
+                    console.log("in second script");
                     function iaq() {
                         console.log("iaq running");
                         iaCallback.push(arguments);
