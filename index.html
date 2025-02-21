@@ -3,16 +3,23 @@
         <title>Hello World from title</title>
         <script>
             console.log("Hello World from script");
+            // Load the InvolveAsia container script
+            (function() {
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = 'https://invol.co/icmt.js?id=ICM-670-4650';
+                script.onload = function() {
+                    window.iaCallback = window.iaCallback || [];
+                    
+                    function iaq() {
+                        console.log("iaq running");
+                        iaCallback.push(arguments);
+                    }
+                };
+                document.head.appendChild(script);
+            })();
         </script>
-        <script async src="https://invol.co/icmt.js?id=ICM-670-4650"></script>
-        <script type="text/javascript">
-            window.iaCallback = window.iaCallback || [];
-        
-            function iaq() {
-                console.log("iaq running");
-                iaCallback.push(arguments);
-            }
-        </script>
+
     </head>
     <body>
         <h1>Hello World</h1>
